@@ -3,7 +3,10 @@ import { Jumbotron,Button } from 'reactstrap';
 import Overview from './Overview'
 
 export default function Movies({ movie }) {
-
+    const message =" "
+      if(movie.success === false){
+           message = movie.message
+      }
     const {Poster,Genre,Title,Ratings,Runtime} = movie
     console.log(movie)
    
@@ -30,7 +33,7 @@ export default function Movies({ movie }) {
           </Jumbotron>
           
              
-            
+            <p style={{textAlign:"center"}}>{message}</p>
           
         </article>
         

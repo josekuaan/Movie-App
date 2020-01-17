@@ -54,15 +54,12 @@ export class MovieProvider extends Component {
             .then(response => response.json())
             .then( data =>{
                console.log(data)
-               this.setState({movies:this.state.movies.concat(data.data)})
-               console.log(this.state.movies)
+              return  this.setState({movies:this.state.movies.concat(data.data)})
+              
            }).catch( err =>{console.log(err)})
        }
       render() {
-  console.log(this.state.movies)
-          const  movies = this.state.movies.map( (movie,index) =>{
-             console.log(movies)
-          })
+ 
     }
     render() {
         return (

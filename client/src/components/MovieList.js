@@ -11,6 +11,9 @@ export default function MovieList() {
         <section className="movie-list">
             <div className="room-list-center">
              {movies.map((item) =>{
+                 if(!item.imdbID){
+                     return <Movies  movie={item} />
+                 }
                  return <Movies key={item.imdbID} movie={item} />
              })}
             </div>
