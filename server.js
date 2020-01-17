@@ -27,7 +27,7 @@ app.use(express.json() )
 
 
 // Set port
-const PORT= process.env.NODE_ENV ||5000
+const PORT= process.env.PORT || 5000
 
 
 //Mount routers
