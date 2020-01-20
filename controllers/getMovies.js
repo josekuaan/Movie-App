@@ -6,22 +6,26 @@ const request = require('request')
 //@route   GET api/movie?name=name
 //@access  Public
 exports.getMovies =  (req,res,next)=>{
-    // console.log(req.query)
 
     const name = req.body.name
-    // let unknown = season ? `$${season}` : ''
-    // console.log("unkwn",unknown)
-    console.log("ok",name)
-    const url = `http://www.omdbapi.com/?t=${name}&apikey=${process.env.OMDB_API_KEY}`
-    console.log(url)
+    // const url = `http://www.omdbapi.com/?t=${name}&apikey=${process.env.OMDB_API_KEY}`
+    // console.log(url)
     try {
     
         request({
                 url: `http://www.omdbapi.com/?t=${name}&apikey=${process.env.OMDB_API_KEY}`,
                 json:true
             }, (error,response,body )=>{
+                console.log(error,response.statusCode,body)
                 if(!error && response.statusCode === 200){
-                    console.log("***************",response.statusCode)
+                    // if(body.Response === "False" ){
+                    //     console.log("ughdstg")
+                    //    return res.status(404).json({
+                    //         success:false,
+                    //         Error:body.Error
+                    //     })
+                    // }
+                   
                     res.status(200).json({
                         success:true,
                         data:body

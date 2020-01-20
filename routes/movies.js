@@ -5,7 +5,7 @@ const {getMovies,getAllMovie} = require('../controllers/getMovies')
 
 const Router = express.Router()
 
-Router.route('/').post(getMovies).get(getAllMovie)
+Router.route('/').post(getMovies)
 
 
 module.exports = Router

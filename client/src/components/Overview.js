@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
   const  Overview = ({ movie }) => {
+    console.log(movie)
 
     const {Poster,Genre,Actors,Plot,Awards,Writer,Released, Language} = movie
       

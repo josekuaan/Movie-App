@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 
 // context
-
  export const MovieContext = React.createContext()
   
 export class MovieProvider extends Component {
@@ -27,22 +26,11 @@ export class MovieProvider extends Component {
     fetchMovie(){
         this.setState({isLoading :true})
 
-        
-        if(this.state.search === " "){
-            console.log("ok")
-            return "please you need to type in a movie"
-            
-        }
-         
-
-        
         const data = {
             name: this.state.search
         }
-        //   if(data)
-        const obj = JSON.stringify(data)
         
-  console.log(obj)
+        const obj = JSON.stringify(data)
         fetch("api/movies",{
             method:"POST",
             headers:{
@@ -53,10 +41,10 @@ export class MovieProvider extends Component {
             })
             .then(response => response.json())
             .then( data =>{
-               console.log(data)
-              return  this.setState({movies:this.state.movies.concat(data.data)})
+                    return  this.setState({movies:this.state.movies.concat(data.data)})
               
            }).catch( err =>{console.log(err)})
+           
        }
       render() {
  

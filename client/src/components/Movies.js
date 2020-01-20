@@ -1,16 +1,15 @@
 import React from 'react'
-import { Jumbotron,Button } from 'reactstrap';
+import { Jumbotron,Spinner } from 'reactstrap';
 import Overview from './Overview'
 
-export default function Movies({ movie }) {
+export default function Movies({ movie,isLoading }) {
     const message =" "
       if(movie.success === false){
            message = movie.message
       }
     const {Poster,Genre,Title,Ratings,Runtime} = movie
-    console.log(movie)
    
-    return (
+      return (
         
         <article className="room">
           <Jumbotron  className="content">
@@ -38,4 +37,5 @@ export default function Movies({ movie }) {
         </article>
         
     )
+
 }

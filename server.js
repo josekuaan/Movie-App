@@ -32,7 +32,7 @@ app.use(express.json() )
 app.use('/api/movies', movies)
 
 // Set port
-const PORT= process.env.NODE_ENV 
+const PORT= process.env.NODE_ENV || 5000
 
 // Set static path
 if(process.env.NODE_ENV === "production"){
